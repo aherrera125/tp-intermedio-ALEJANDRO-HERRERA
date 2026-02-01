@@ -28,17 +28,6 @@ export const createDuenio = async (
   return (DuenioResult as any).insertId;
 };
 
-/*export const updateDuenio = async (
-  id: string,
-  duenio: IDuenio,
-): Promise<IDuenio | null> => {
-  const [rows] = await pool.query<DuenioRow[]>(
-    "UPDATE DUENOS DU SET nombre = ?, apellido = ?, telefono = ?, direccion = ? WHERE DU.id = ?",
-    [duenio.nombre, duenio.apellido, duenio.telefono, duenio.direccion, id],
-  );
-  return rows.length ? rows[0] : null;
-};*/
-
 export const updateDuenio = async (
   id: string,
   duenio: IDuenio,
@@ -63,7 +52,7 @@ export const updateDuenio = async (
   return rows[0];
 };
 
-export const deleteDuenio = async (id: number): Promise<boolean> => {
+export const deleteDuenio = async (id: string): Promise<boolean> => {
   const [result] = await pool.query<ResultSetHeader>(
     "DELETE FROM DUENOS WHERE id = ?",
     [id],
