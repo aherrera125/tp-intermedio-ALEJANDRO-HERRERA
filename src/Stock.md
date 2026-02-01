@@ -57,3 +57,23 @@ curl -sS -X PUT http://localhost:3000/api/veterinarios/5 \
 
 Eliminar un veterinario
 curl -sS -X DELETE http://localhost:3000/api/veterinarios/5
+
+HISTORIAL CLINICO
+Obtener todos
+curl -sS http://localhost:3000/api/historialClinico
+
+Obtener por id
+curl -sS http://localhost:3000/api/historialClinico/1
+
+Crear un historial clinico
+curl -sS -X POST http://localhost:3000/api/historialClinico \
+ -H "Content-Type: application/json" \
+ -d '{"id_mascota":"3","id_veterinario":"2","fecha_registro":"2024-02-01","descripcion":"Chequeo anual: todo ok"}'
+
+Actualizar un historial clinico
+curl -sS -X PUT http://localhost:3000/api/historialClinico/5 \
+ -H "Content-Type: application/json" \
+ -d '{"id_mascota":"3","id_veterinario":"2","fecha_registro":"2024-02-02","descripcion":"Tratamiento completado"}'
+
+Eliminar un historial clinico
+curl -sS -X DELETE http://localhost:3000/api/historialClinico/5
