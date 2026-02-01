@@ -23,6 +23,6 @@ export const editDuenio = async (id: string, data: IDuenio) => {
   return await updateDuenio(id, data);
 };
 
-export const removeDuenio = async (id: number) => {
+export const removeDuenio = async (id: string) => {
   return await deleteDuenio(id);
 };
