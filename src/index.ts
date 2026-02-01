@@ -3,6 +3,7 @@ import path from "path";
 import "dotenv/config";
 import dueniosRoutes from "./routes/duenios.routes";
 import mascotasRoutes from "./routes/mascotas.routes";
+import veterinariosRoutes from "./routes/veterinarios.routes";
 
 const app = express(); // Creamos la aplicación Express
 const PORT = process.env.PORT || 3000; // Definimos el puerto del servidor
@@ -13,6 +14,7 @@ app.use(express.static(path.join(__dirname, "..", "public"))); // Middleware par
 
 app.use("/api/duenios", dueniosRoutes);
 app.use("/api/mascotas", mascotasRoutes);
+app.use("/api/veterinarios", veterinariosRoutes);
 
 // Iniciar el servidor HTTP
 app.listen(PORT, () => {

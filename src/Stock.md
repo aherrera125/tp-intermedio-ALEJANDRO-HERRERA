@@ -1,5 +1,5 @@
 DUENIOS
-Listar todos
+Obtener todos
 curl -X GET http://localhost:3000/api/duenios
 
 Obtener por id
@@ -19,7 +19,7 @@ Eliminar un dueño
 curl -X DELETE http://localhost:3000/api/duenios/8
 
 MASCOTAS
-Listar todas
+Obtener todas
 curl -sS http://localhost:3000/api/mascotas
 
 Obtener por id
@@ -37,3 +37,23 @@ curl -sS -X PUT http://localhost:3000/api/mascotas/5 \
 
 Eliminar una mascota
 curl -sS -X DELETE http://localhost:3000/api/mascotas/5
+
+VETERINARIOS
+Obtener todos
+curl -sS http://localhost:3000/api/veterinarios
+
+Obtener por id
+curl -sS http://localhost:3000/api/veterinarios/1
+
+Crear un veterinario
+curl -sS -X POST http://localhost:3000/api/veterinarios \
+ -H "Content-Type: application/json" \
+ -d '{"nombre":"María","apellido":"Perez","matricula":"MAT-123","especialidad":"Dermatología"}'
+
+Actualizar un Veterinario
+curl -sS -X PUT http://localhost:3000/api/veterinarios/5 \
+ -H "Content-Type: application/json" \
+ -d '{"nombre":"María","apellido":"González","matricula":"MAT-123","especialidad":"Cirugía"}'
+
+Eliminar un veterinario
+curl -sS -X DELETE http://localhost:3000/api/veterinarios/5

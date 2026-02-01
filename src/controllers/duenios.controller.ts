@@ -59,7 +59,7 @@ export const update = async (req: Request, res: Response) => {
 export const delet = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
-    const duenioDeleted = await dueniosService.removeDuenio(Number(id));
+    const duenioDeleted = await dueniosService.removeDuenio(id);
     if (!duenioDeleted) {
       res.status(404).json({ message: `Dueño no encontrado.` });
     }
